@@ -11,10 +11,9 @@
 
     <link rel="stylesheet" href="static/styles.css" />
     <script>
-      // Flask template variables
-      const selectedModel = "heart";
-      const features = [];
-      const result = null;
+      const selectedModel = {{ selected_model | default("null") | tojson | safe }};
+      const features = {{ features | default([]) | tojson | safe }};
+      const result = {{ result | default("null") | tojson | safe }};
     </script>
   </head>
 
