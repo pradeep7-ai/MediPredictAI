@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediPredict AI - AI-Powered Medical Predictions</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/styles.css" />
+    <script>
+      // Flask template variables
+      const selectedModel = {{ selected_model | default("null") | tojson | safe }};
+      const features = {{ features | default([]) | tojson | safe }};
+      const result = {{ result | default("null") | tojson | safe }};
+    </script>
+  </head>
+
+  <body>
+    <div class="header">
+      <i class="fas fa-heartbeat header-icon"></i>
+      <h1 class="main-title">MediPredict AI</h1>
+      <p class="subtitle">
+        Advanced AI-powered health predictions using state-of-the-art machine
+        learning models. Get accurate insights about potential health conditions
+        based on your medical parameters.
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="model-selection-card">
+        <label for="model" class="selection-label">
+          <i class="fas fa-brain"></i>
+          Choose Your Prediction Model
+        </label>
+        <div class="model-dropdown">
+          <select id="model" class="model-select">
+            <option value="">Select a medical condition to analyze</option>
+            <option value="diabetes">🩺 Diabetes Risk Assessment</option>
+            <option value="parkinsons">🧠 Parkinson's Disease Detection</option>
+            <option value="heart">❤ Heart Disease Prediction</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="form-container"></div>
+    </div>
+    <!-- Add this footer HTML before closing </body> tag -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <h3 class="footer-title">MediPredict AI</h3>
+            <p class="footer-description">
+              Advanced AI-powered health predictions for educational purposes
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-section">
+              <h4>Connect</h4>
+              <div class="social-links">
+                <a
+                  href="https://www.linkedin.com/in/pradeep-boddepalli-65280731a/"
+                  target="_blank"
+                  class="social-link"
+                  title="LinkedIn"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="https://github.com/pradeep7-ai"
+                  target="_blank"
+                  class="social-link"
+                  title="GitHub"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h4>Disclaimer</h4>
+              <p class="disclaimer">
+                For educational purposes only. Not for actual medical diagnosis.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 MediPredict AI. Developed by
+            <span class="developer-name">B.Sai Pradeep</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="static/script.js"></script>
+  </body>
+</html>
