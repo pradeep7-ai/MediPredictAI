@@ -9,7 +9,6 @@ function showForm(modelName = "", prevValues = [], resultText = "") {
 
   container.innerHTML = "";
 
-  // Updated forms to match your Flask backend exactly
   const forms = {
     heart: [
       "Age",
@@ -145,7 +144,6 @@ function showForm(modelName = "", prevValues = [], resultText = "") {
   html += `</div>`;
   container.innerHTML = html;
 
-  // Add form submission handling for better UX
   const form = container.querySelector("form");
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -156,7 +154,6 @@ function showForm(modelName = "", prevValues = [], resultText = "") {
     });
   }
 
-  // Smooth scroll to form if we have a result (page reload scenario)
   if (resultText && resultText !== "null") {
     setTimeout(() => {
       document.getElementById("form-container").scrollIntoView({
